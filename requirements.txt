@@ -19,7 +19,6 @@ cryptography==42.0.8
 cycler==0.12.1
 debugpy==1.8.2
 decorator==5.1.1
-dlib==19.24.4
 dnspython==2.6.1
 executing==2.0.1
 flatbuffers==24.3.25
@@ -107,3 +106,4 @@ wheel==0.43.0
 wrapt==1.16.0
 cmake
 gast
+dlib==19.24.4
