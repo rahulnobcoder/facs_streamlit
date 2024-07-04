@@ -40,7 +40,6 @@ def get_face(image, net=dnn_net, predictor=predictor):
             # Get the bounding box for the face based on landmarks
             landmarks_np = np.array([[p.x, p.y] for p in landmarks.parts()])
             x, y, w, h = cv2.boundingRect(landmarks_np)
-            print(x,y,w,h)
             x -= 25
             y -= 25
             w += 50
@@ -52,7 +51,6 @@ def get_face(image, net=dnn_net, predictor=predictor):
             h = min(h, image.shape[0] - y)
             # Crop and resize the face
             face_crop = image[max(y-h//2,0):y+h, x:x+w]
-            print(face_crop.shape)
             face_crop = cv2.resize(face_crop, (224, 224))
             return face_crop
 
