@@ -67,7 +67,7 @@ def read_video_frames(video_path):
 
 # Function to process frames and make predictions
 def process_frames(frames, model):
-    frames = [get_face(frame) for frame in tqdm(frames)]
+    frames = [get_face(frame) for frame in tqdm(frames[:len(frames)-1])]
     st.text(f"face shape : {frames[0].shape}")
     frame_array = np.array(frames)
     preds = model.predict(frame_array).round()
